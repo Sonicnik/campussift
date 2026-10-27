@@ -1,0 +1,15 @@
+# Local dependencies and browser data must not be published.
+node_modules/
+.eventsourcer/browser-runtime/node_modules/
+.eventsourcer/browser-profile/
+.eventsourcer/browser-output/
+.eventsourcer/*stderr.log
+# Private data and generated files
+.eventsourcer/
+Upcoming_Signups.md
+calendar-*.json
+reports/
+output/
+.env
+.env.*
+.DS_Store

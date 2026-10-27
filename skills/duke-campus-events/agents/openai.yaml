@@ -1,0 +1,6 @@
+interface:
+  display_name: "Duke Campus Events"
+  short_description: "Find campus events and calendar your selections"
+  default_prompt: "Use $duke-campus-events to find Duke campus events for next Monday through Sunday across my interests, checking every relevant active master-list source and documenting all qualifying events, then add the events I select to Google Calendar."
+policy:
+  allow_implicit_invocation: true
