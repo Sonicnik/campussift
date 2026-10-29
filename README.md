@@ -76,13 +76,15 @@ Use an agent that supports skills and browser tools. Keep the supporting source 
 
 The included [source directory](Duke_Event_Discovery_Master_List.md) covers **Duke University**. Using CampusSift at another university requires a campus-specific source directory, scope and timetable. Review the [workflow plan](EventSourcer_Plan.md) for the included defaults and replace personal schedule settings with your own.
 
-Browser access is configured separately. See [browser setup](docs/Playwright_MCP_Setup.md) for the tested Playwright MCP approach.
+For the current manual setup, configure Playwright MCP using the [browser setup guide](docs/Playwright_MCP_Setup.md). The standard CampusSift package will include this browser integration by default.
 
 ## Browser integration and plugin packaging
 
 CampusSift's discovery skill supplies the workflow; [Microsoft Playwright MCP](https://github.com/microsoft/playwright-mcp) supplies browser tools.
 
-The intended plugin will bundle the skill with configuration that launches Playwright MCP as an external dependency. Browser profiles and login sessions stay on each user's machine.
+**Playwright MCP is a default component of CampusSift.** The intended standard installation will include the discovery skill, a pinned official Playwright MCP dependency, and configuration to register and launch its browser tools together. Browser integration is part of the main package and setup flow.
+
+Each installation will use a dedicated local browser profile. Browser profiles and login sessions stay on each user's machine; users complete sign-in themselves when a source requires it.
 
 **Plugin packaging is planned.** The current repository provides the skill, workflow documentation and Duke source directory; it does not yet provide a one-step plugin installer or automatically register a browser server. No cross-agent installation compatibility is claimed.
 
