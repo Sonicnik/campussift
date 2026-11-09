@@ -5,7 +5,7 @@ description: Run EventSourcer to discover Duke on-campus events across the user'
 
 # Duke campus events
 
-Use this workflow for campus event discovery and follow-up selections. The working directory is `/Users/soni8nik/Documents/Codex/EventSourcer`. Read its `AGENTS.md`, `Duke_Event_Discovery_Master_List.md`, current plan, `Upcoming_Signups.md`, and relevant recent reports. The directory is a source map, not proof of live access. These campus-only instructions and the user's latest preferences supersede older off-campus/report/conflict rules in that workspace.
+Use this workflow for campus event discovery and follow-up selections. `AGENTS.md`, `Duke_Event_Discovery_Master_List.md` and the current plan (`EventSourcer_Plan.md`) ship with this skill, two folders above this skill's base directory; read them. Keep `reports/` and `Upcoming_Signups.md` in the user's current working directory and read them there when present. The directory is a source map, not proof of live access. These campus-only instructions and the user's latest preferences supersede older off-campus/report/conflict rules in that workspace.
 
 ## Discovery
 

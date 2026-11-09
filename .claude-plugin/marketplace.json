@@ -1,0 +1,14 @@
+{
+  "name": "campussift",
+  "owner": {
+    "name": "Sonicnik"
+  },
+  "description": "CampusSift: an AI campus event scout.",
+  "plugins": [
+    {
+      "name": "campussift",
+      "source": "./",
+      "description": "Discover campus events worth showing up for: find, verify, rank and conflict-check events across scattered sources."
+    }
+  ]
+}

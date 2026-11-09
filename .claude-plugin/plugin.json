@@ -1,0 +1,9 @@
+{
+  "name": "campussift",
+  "version": "0.1.0",
+  "description": "Discover campus events worth showing up for: find, verify, rank and conflict-check events across scattered sources.",
+  "author": {
+    "name": "Sonicnik"
+  },
+  "repository": "https://github.com/Sonicnik/campussift"
+}
