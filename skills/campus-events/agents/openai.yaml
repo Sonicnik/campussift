@@ -1,0 +1,6 @@
+interface:
+  display_name: "Campus Events"
+  short_description: "Find campus events and calendar your selections"
+  default_prompt: "Use $campus-events to find events on my campus for next Monday through Sunday across my interests, checking every relevant source and documenting all qualifying events, then add the events I select to my calendar."
+policy:
+  allow_implicit_invocation: true

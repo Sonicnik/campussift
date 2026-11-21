@@ -13,3 +13,6 @@ output/
 .env
 .env.*
 .DS_Store
+
+# CampusSift state when running inside a clone
+/campussift/

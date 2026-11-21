@@ -1,6 +1,6 @@
 # EventSourcer
 
-Use `Duke_Event_Discovery_Master_List.md` as the source directory and planning reference. Its dated access audit distinguishes public listings from account-only and member-only material; recheck live access before claiming a source was covered.
+Use `sources.md` as the source directory and planning reference. Its dated access audit distinguishes public listings from account-only and member-only material; recheck live access before claiming a source was covered.
 
 The goal is to help the user discover and assess Duke and nearby events for meeting students, builders, founders, researchers, and professionals, while also finding enjoyable social events. Prefer current organizer listings and verify dates, eligibility, registration, costs, and whether there is a real opportunity to meet people. Keep off-campus time and travel cost visible.
 

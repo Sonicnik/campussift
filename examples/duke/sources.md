@@ -1,10 +1,10 @@
 # Duke event discovery: master list and source directory
 
-*Planning and source directory — expanded September 24, 2026; access audit updated September 25, 2026. The [Fall 2026 weekly plan](EventSourcer_Plan.md) schedules Saturday reports through December 12, 2026.*
+*Planning and source directory — expanded September 24, 2026; access audit updated September 25, 2026. The [Fall 2026 weekly plan](plan-fall-2026.md) schedules Saturday reports through December 12, 2026.*
 
 ## Current source priority — September 25, 2026
 
-For club and student-group announcements, **check each organizer's Instagram account first**. The user has paused Duke Groups event/member-feed discovery (G2 and the Duke Groups portion of G4) and Duke email, newsletters, and listserv discovery (G3, G7, and email portions of F13, A11, A15, and S3). Keep those entries in this directory for later reconsideration, but do not use them in the current source scan. Continue checking public organizer event pages and registration pages when an Instagram post points to them, and verify event details with the host. An Instagram post may be missing, private, or a story that is not accessible; record that gap rather than assuming Instagram contains every announcement. This sourcing preference remains in force for the [user-authorized weekly plan](EventSourcer_Plan.md); it does not authorize additional account connections.
+For club and student-group announcements, **check each organizer's Instagram account first**. The user has paused Duke Groups event/member-feed discovery (G2 and the Duke Groups portion of G4) and Duke email, newsletters, and listserv discovery (G3, G7, and email portions of F13, A11, A15, and S3). Keep those entries in this directory for later reconsideration, but do not use them in the current source scan. Continue checking public organizer event pages and registration pages when an Instagram post points to them, and verify event details with the host. An Instagram post may be missing, private, or a story that is not accessible; record that gap rather than assuming Instagram contains every announcement. This sourcing preference remains in force for the [user-authorized weekly plan](plan-fall-2026.md); it does not authorize additional account connections.
 
 ## Access audit — September 25, 2026
 
