@@ -1,108 +1,158 @@
-# CampusSift
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/logo-dark.svg">
+    <img src="assets/logo.svg" width="180" alt="CampusSift logo: scattered dots pass through a sieve and one highlighted event comes out">
+  </picture>
+</p>
 
-**Discover campus events worth showing up for.**
+<h1 align="center">CampusSift</h1>
 
-An AI-powered campus event scout that finds opportunities across scattered sources, verifies the details, ranks them by your interests, and flags schedule conflicts.
+<p align="center">
+  <em>Discover campus events worth showing up for.</em>
+</p>
 
-Workshops. Founder meetups. Research talks. Club gatherings. Something fun on a Thursday.
+<p align="center">
+  <img src="https://img.shields.io/badge/Claude%20Code-plugin-111111?style=flat-square" alt="Claude Code plugin">
+  <img src="https://img.shields.io/badge/browser-Playwright%20MCP-111111?style=flat-square" alt="Browser: Playwright MCP">
+  <img src="https://img.shields.io/badge/campus-Duke%20University-111111?style=flat-square" alt="Campus: Duke University">
+  <img src="https://img.shields.io/github/stars/Sonicnik/campussift?style=flat-square&color=111111&label=stars" alt="Stars">
+</p>
 
-CampusSift helps you find them—and understand whether you can actually attend.
+<p align="center">
+  <strong>Find</strong> &middot; <strong>Verify</strong> &middot; <strong>Rank</strong> &middot; <strong>Conflict-check</strong> &middot; <strong>Calendar</strong>
+</p>
 
-## Why CampusSift?
+---
 
-Campus events are scattered across university calendars, department websites, club Instagram accounts, career platforms and registration pages.
+Workshops. Founder meetups. Research talks. Club nights. Something fun on a Thursday.
 
-Finding an announcement is only the beginning. Is it current? Open to undergraduates? On campus? Already full? Does it overlap with class?
+They are all on campus somewhere: a department calendar, a club's Instagram, a career portal, a registration form. CampusSift is an AI agent skill that goes through those sources for you, checks whether each event is real, current and open to you, ranks it against your interests, and tells you what clashes with your week.
 
-CampusSift gives your AI agent a repeatable workflow for answering those questions and producing a useful event briefing.
+You get one report. You pick codes. It puts them on your calendar.
 
-## What it does
+## Install
 
-- **Searches across sources.** Checks university calendars, departments, student organizations and organizer pages.
-- **Verifies practical details.** Looks for dates, times, venues, eligibility, costs and registration requirements.
-- **Ranks for your interests.** Helps you assess opportunities for learning, building, meeting people and enjoying campus life.
-- **Tracks events consistently.** Deduplicates announcements and preserves event codes across reports.
-- **Checks conflicts.** Compares events with your supplied timetable, recorded selections and an authorized calendar.
-- **Shows its limits.** Records which sources were checked and where access or information was incomplete.
-- **Supports your selections.** Can create calendar holds through a connected calendar tool when you request them.
+**Claude Code**, in your terminal:
 
-A calendar hold, an attendance selection and an organizer registration are tracked separately.
+```bash
+claude plugin marketplace add Sonicnik/campussift
+```
+```bash
+claude plugin install campussift@campussift
+```
+
+Or inside a Claude Code session, as two separate prompts:
+
+```
+/plugin marketplace add Sonicnik/campussift
+```
+```
+/plugin install campussift@campussift
+```
+
+Start a new session afterward so the skill and browser tools load. You need [Node.js](https://nodejs.org) (for `npx`) and Google Chrome.
+
+**Other agents:** copy [`skills/duke-campus-events/`](skills/duke-campus-events/) into your agent's skills folder, keep `AGENTS.md`, `Duke_Event_Discovery_Master_List.md` and `EventSourcer_Plan.md` two folders above it, and register Playwright MCP yourself ([setup notes](docs/Playwright_MCP_Setup.md)). Only Claude Code has been tested.
+
+**Update** to the latest version:
+
+```bash
+claude plugin marketplace update campussift
+```
 
 ## Try it
 
-Ask your agent:
-
-> Find campus events for next week across my interests in AI, startups, physics and social activities. Check the active source directory and flag conflicts with my schedule.
-
-You can also narrow the request:
+> Find Duke campus events for next week across my interests in AI, startups, physics and social activities, and flag conflicts with my schedule.
 
 > Find beginner-friendly robotics workshops and builder meetups over the next two weeks.
 
-After reviewing a report:
+After reading the report:
 
-> Add the Raspberry Pi workshop to my calendar.
-
-Calendar actions require a connected tool and verified scheduling details. Creating a calendar entry does not register you with the organizer.
+> Add 014 and 027 to my calendar.
 
 ## How it works
 
-1. **Set the scope.** Specify your campus, interests and date window.
-2. **Check the sources.** Work through the active source directory and verify live access.
-3. **Verify each event.** Read organizer listings, registration pages and flyer images where needed.
-4. **Assess the options.** Remove duplicates, identify participation barriers and check schedule conflicts.
-5. **Save the briefing.** Produce a report with stable codes, source links, recommendations and explicit gaps.
+```mermaid
+flowchart LR
+    A[Sources] --> B[Verify] --> C[Rank] --> D[Conflicts] --> E[Report]
+    E -->|you pick codes| F[Calendar]
+```
 
-Comprehensive discovery documents every qualifying event found. The final top-five recommendation is a starting point for browsing the report.
+1. **Set the window.** Defaults to next Monday through Sunday, Eastern time. Ask for any other range.
+2. **Sweep the sources.** Works through every relevant active source in the [source directory](Duke_Event_Discovery_Master_List.md), by topic and by organizer. Club Instagram first for student announcements, then the official page to verify.
+3. **Verify each event.** Reads listings, registration pages and flyer images. Unknown details stay marked unknown.
+4. **Dedupe and rank.** One stable code per event or recurring series, kept across weeks. Ranked for fit, access and a real chance to meet people.
+5. **Check conflicts.** Against your class timetable, your other selections and your primary Google Calendar.
+6. **Save the report.** A dated Markdown file in your working folder, earlier reports kept.
 
-## What you get
+## What a report looks like
 
-Each report includes:
+<sub>Illustrative entry. Names, times and venues are made up.</sub>
 
-- Your selected events in the requested window.
-- Newly discovered opportunities, grouped by interest.
-- Previously reported events that are still upcoming.
-- Dates, venues, organizer links and participation requirements.
-- Named conflicts and tight travel transitions.
-- Separate quality and rarity scores.
-- Unverified leads, actionable deadlines and source coverage notes.
+> ### Builders & research
+>
+> **`014` · Intro to Robot Arms Workshop**
+>
+> A hands-on session building and programming a small robot arm. Teams of three, beginners welcome.
+>
+> 🗓 Wed Dec 2, 6:00–8:00 p.m. ET &nbsp;·&nbsp; 📍 Makerspace, Room 101 &nbsp;·&nbsp; 👥 Engineering student makerspace<br>
+> ⚠️ **Conflict:** overlaps your 5:15–6:30 p.m. lab section<br>
+> ⭐ **Quality** 8/10 &nbsp;·&nbsp; 💎 **Rarity** 7/10 &nbsp;·&nbsp; 🎟 RSVP required, 20 seats
 
-Reports are saved as Markdown so you can read, edit and keep them locally.
+Every report has, in order:
 
-## Use as a skill
+| Section | What's in it |
+|---|---|
+| **Your selections** | Events you already picked, with registration status |
+| **Newly found** | Every qualifying new event, grouped by field |
+| **Still upcoming** | Earlier finds you haven't picked yet |
+| **Source coverage** | Each source checked, dates covered, and any gaps |
+| **Top five** | The final paragraph: five new events worth a look, and why |
 
-The discovery instructions are in [`skills/duke-campus-events/SKILL.md`](skills/duke-campus-events/SKILL.md). The current skill identifier is `duke-campus-events`.
+## What it will and won't do
 
-Use an agent that supports skills and browser tools. Keep the supporting source directory and workflow files available to the agent, and configure workspace paths for your installation. The current skill contains a local workspace path that must be adjusted before using it elsewhere.
+| ✅ Does | 🚫 Won't, unless you ask |
+|---|---|
+| Read public listings and pages | Register you with an organizer |
+| Use a browser session you signed into yourself | Sign in, connect accounts or read your email |
+| Check conflicts against your calendar | Remove or replace events already on your calendar |
+| Add calendar holds for the codes you pick | Set up recurring or scheduled monitoring |
+| Say which sources it couldn't reach | Claim it covered all of campus when it didn't |
 
-The included [source directory](Duke_Event_Discovery_Master_List.md) covers **Duke University**. Using CampusSift at another university requires a campus-specific source directory, scope and timetable. Review the [workflow plan](EventSourcer_Plan.md) for the included defaults and replace personal schedule settings with your own.
+A calendar hold is not a registration. CampusSift tracks your selection, your RSVP and the organizer's confirmation separately, and tells you which one you have.
 
-For the current manual setup, configure Playwright MCP using the [browser setup guide](docs/Playwright_MCP_Setup.md). The standard CampusSift package will include this browser integration by default.
+## Make it yours
 
-## Browser integration and plugin packaging
+CampusSift ships tuned for one Duke student. Change these before you rely on it:
 
-CampusSift's discovery skill supplies the workflow; [Microsoft Playwright MCP](https://github.com/microsoft/playwright-mcp) supplies browser tools.
+- **Interests and priorities:** the field list in [`SKILL.md`](skills/duke-campus-events/SKILL.md) and the ranking tiers in [`EventSourcer_Plan.md`](EventSourcer_Plan.md).
+- **Class timetable:** the semester schedule in `EventSourcer_Plan.md`.
+- **Another university:** replace [`Duke_Event_Discovery_Master_List.md`](Duke_Event_Discovery_Master_List.md) with your campus's sources, and update the venue rules in `SKILL.md`.
 
-**Playwright MCP is a default component of CampusSift.** The intended standard installation will include the discovery skill, a pinned official Playwright MCP dependency, and configuration to register and launch its browser tools together. Browser integration is part of the main package and setup flow.
+## What's inside
 
-Each installation will use a dedicated local browser profile. Browser profiles and login sessions stay on each user's machine; users complete sign-in themselves when a source requires it.
+```
+campussift/
+├── .claude-plugin/                     plugin + marketplace manifests
+├── .mcp.json                           starts Playwright MCP (Chrome)
+├── skills/duke-campus-events/SKILL.md  the workflow your agent follows
+├── Duke_Event_Discovery_Master_List.md where to look, with an access audit
+├── EventSourcer_Plan.md                window, ranking, report layout, timetable
+├── AGENTS.md                           standing rules and source choices
+└── docs/Playwright_MCP_Setup.md        manual browser setup notes
+```
 
-**Plugin packaging is planned.** The current repository provides the skill, workflow documentation and Duke source directory; it does not yet provide a one-step plugin installer or automatically register a browser server. No cross-agent installation compatibility is claimed.
+## Privacy
 
-## Access and privacy
+- Browser profiles, sign-ins and reports stay on your machine. `reports/`, `Upcoming_Signups.md` and calendar exports are git-ignored.
+- You complete any sign-in or multi-factor prompt yourself, in the browser window.
+- Calendar access is optional. Without it, discovery still runs and the conflict check is marked incomplete.
 
-Public sources can be checked without signing into university accounts. Restricted sources require your own authorized session; complete sign-in and multifactor authentication directly in the browser.
+## Limits
 
-Calendar access is optional. Discovery can run without it, with calendar conflict checking marked incomplete.
+- Listings change after they're checked, and some announcements are private or hidden from the browser.
+- Recurring meetings can be cancelled without notice online.
+- A full sweep of every source takes a while and uses a lot of tokens.
+- Calendar writes need a Google Calendar tool connected to your agent.
 
-Keep browser profiles, credentials, calendar exports and personal reports out of version control. Account connections, registrations, messages, calendar changes and scheduled monitoring require your instruction.
-
-## Limitations
-
-- Listings can change after verification.
-- Some announcements are private, temporary or unavailable to the browsing tool.
-- Recurring meetings may have cancellations that are not publicly posted.
-- Missing hours, venues or eligibility rules remain explicitly unverified.
-- Comprehensive source passes can take substantial time and tokens.
-- Compatibility depends on the agent and tools configured for your installation.
-
-CampusSift reports what it could verify and where you still need to check with the organizer.
+CampusSift tells you what it verified, and where you still need to ask the organizer.
