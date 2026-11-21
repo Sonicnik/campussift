@@ -1,7 +1,7 @@
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="assets/logo-dark.svg">
-    <img src="assets/logo.svg" width="180" alt="CampusSift logo: scattered dots pass through a sieve and one highlighted event comes out">
+    <img src="assets/logo.svg" width="180" alt="CampusSift logo: scattered dots pour into a funnel and one highlighted event comes out">
   </picture>
 </p>
 
@@ -72,11 +72,9 @@ After reading the report:
 
 ## How it works
 
-```mermaid
-flowchart LR
-    A[Sources] --> B[Verify] --> C[Rank] --> D[Conflicts] --> E[Report]
-    E -->|you pick codes| F[Calendar]
-```
+<p align="center">
+  <strong>Sources</strong> &rarr; <strong>Verify</strong> &rarr; <strong>Rank</strong> &rarr; <strong>Conflicts</strong> &rarr; <strong>Report</strong> &rarr; <em>you pick codes</em> &rarr; <strong>Calendar</strong>
+</p>
 
 1. **Set the window.** Defaults to next Monday through Sunday, Eastern time. Ask for any other range.
 2. **Sweep the sources.** Works through every relevant active source in the [source directory](Duke_Event_Discovery_Master_List.md), by topic and by organizer. Club Instagram first for student announcements, then the official page to verify.
